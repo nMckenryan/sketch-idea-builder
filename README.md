@@ -6,7 +6,7 @@ This was built with the T3 Stack project bootstrapped with create-t3-app with:
 
 - React (Next.js)
 - TailwindCSS
-- shadcn UI Library
+- shadcn/ui UI Library
 - Vercel Hosting
 
 ### NOTES:
