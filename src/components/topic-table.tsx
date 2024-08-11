@@ -8,6 +8,7 @@ import {
   CardFooter,
 } from "./ui/card";
 import { Button } from "~/app/ui/button";
+import { Checkbox } from "~/app/ui/checkbox";
 
 interface TableProps {
   listName: string;
@@ -25,17 +26,25 @@ export default function TopicTable(props: TableProps) {
       <CardContent>
         <form className="grid gap-2">
           {[...Array(props.conceptLimit).keys()].map((conceptNumber) => (
-            <Input
-              type="text"
+            <div
+              className="flex items-center"
               key={props.listName + "-" + conceptNumber}
-              id={"text" + conceptNumber}
-              placeholder={"Concept " + (conceptNumber + 1)}
-            />
+            >
+              <Checkbox
+                className="mr-1 h-9 w-9"
+                id={"select" + conceptNumber}
+              />
+              <Input
+                type="text"
+                id={"text" + conceptNumber}
+                placeholder={"Concept " + (conceptNumber + 1)}
+              />
+            </div>
           ))}
         </form>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline">Cancel</Button>
+        <Button variant="outline">Clear</Button>
         <Button>Done</Button>
       </CardFooter>
     </Card>

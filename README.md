@@ -11,13 +11,17 @@ This was built with the T3 Stack project bootstrapped with create-t3-app with:
 
 ### NOTES:
 
--
+- Tailwind is paying for itself already. much easier to use than the usual inline styles
 
 ### TODO:
 
 - [x] Basic Setup and Deployment check to Vercel
 - [x] Establish Debug
-- [] Set up basic UI
+- [x] Set up basic UI
+- [] Set up Options Menu
+- [] Set up tutorial docs
+- [] Set up Timer
+- [] Set up nav menu
 - [] Set up About Page Explaining functions
 - [] Set up option settings
 - [] Check basic UI mobile compatibility
