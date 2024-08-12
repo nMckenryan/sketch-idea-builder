@@ -1,3 +1,5 @@
+"use client";
+
 import { Input } from "@/app/ui/input";
 import {
   Card,
@@ -9,14 +11,31 @@ import {
 } from "./ui/card";
 import { Button } from "~/app/ui/button";
 import { Checkbox } from "~/app/ui/checkbox";
+import { useState } from "react";
 
 interface TableProps {
   listName: string;
   description: string;
-  conceptLimit: number;
+  conceptLimit: string[];
 }
 
 export default function TopicTable(props: TableProps) {
+  const [selected, setSelected] = useState<string[]>([]);
+
+  const maxSelected = 3;
+
+  const handleChange = (item: string) => {
+    setSelected((prev) => {
+      if (prev.includes(item)) {
+        return prev.filter((i) => i !== item);
+      } else if (prev.length < maxSelected) {
+        return [...prev, item];
+      } else {
+        return prev;
+      }
+    });
+  };
+
   return (
     <Card className="w-[350px]">
       <CardHeader>
@@ -25,19 +44,21 @@ export default function TopicTable(props: TableProps) {
       </CardHeader>
       <CardContent>
         <form className="grid gap-2">
-          {[...Array(props.conceptLimit).keys()].map((conceptNumber) => (
-            <div
-              className="flex items-center"
-              key={props.listName + "-" + conceptNumber}
-            >
+          {props.conceptLimit.map((item, index) => (
+            <div className="flex items-center" key={item}>
               <Checkbox
                 className="mr-1 h-9 w-9"
-                id={"select" + conceptNumber}
+                id={item}
+                checked={selected.includes(item)}
+                onCheckedChange={() => handleChange(item)}
+                disabled={
+                  !selected.includes(item) && selected.length >= maxSelected
+                }
               />
               <Input
                 type="text"
-                id={"text" + conceptNumber}
-                placeholder={"Concept " + (conceptNumber + 1)}
+                id={item}
+                placeholder={"Ideal " + (index + 1)}
               />
             </div>
           ))}
