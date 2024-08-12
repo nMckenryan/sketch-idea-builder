@@ -44,10 +44,10 @@ export default function TopicTable(props: TableProps) {
       </CardHeader>
       <CardContent>
         <form className="grid gap-2">
-          {props.conceptLimit.map((item, index) => (
+          {props.conceptLimit.map((item) => (
             <div className="flex items-center" key={item}>
               <Checkbox
-                className="mr-1 h-9 w-9"
+                className="mr-2 h-9 w-9"
                 id={item}
                 checked={selected.includes(item)}
                 onCheckedChange={() => handleChange(item)}
@@ -56,9 +56,12 @@ export default function TopicTable(props: TableProps) {
                 }
               />
               <Input
+                className="disabled:border-grey-100 border-primary"
                 type="text"
                 id={item}
-                placeholder={"Ideal " + (index + 1)}
+                disabled={
+                  !selected.includes(item) && selected.length >= maxSelected
+                }
               />
             </div>
           ))}
