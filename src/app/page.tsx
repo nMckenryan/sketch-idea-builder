@@ -1,3 +1,4 @@
+import { DialogPopup } from "~/components/dialog-popup";
 import PremiseWindow from "~/components/premise-window";
 import TopicTable from "~/components/topic-table";
 import { getConceptsOptions } from "~/lib/utils";
@@ -12,6 +13,11 @@ export default function HomePage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+      <header>
+        <div className="absolute right-4 top-4">
+          <DialogPopup />
+        </div>
+      </header>
       <div className="grid grid-cols-3 gap-4">
         {conceptOptions.concepts
           ? Array.from({ length: 3 }, (_, i) => i).map((i) =>

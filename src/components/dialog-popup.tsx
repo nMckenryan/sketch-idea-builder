@@ -6,7 +6,6 @@ import {
   AlertDialogTitle,
   AlertDialogDescription,
   AlertDialogFooter,
-  AlertDialogCancel,
   AlertDialogAction,
 } from "~/app/ui/alert-dialog";
 import { Button } from "~/app/ui/button";
@@ -17,7 +16,7 @@ export function DialogPopup() {
     <AlertDialog>
       <AlertDialogTrigger asChild>
         <Button variant="outline">
-          <GrHelpBook />
+          <GrHelpBook style={{ color: "black" }} />
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
@@ -29,14 +28,13 @@ export function DialogPopup() {
               <li>
                 Fill in as much of the prompts as possible with funny concepts.
               </li>
-              <li> Select your three favorites in each category</li>
+              <li> Select your three favourites in each category</li>
               <li> Combine them in the Premise section below</li>
             </ul>
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
+          <AlertDialogAction>Got it</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
