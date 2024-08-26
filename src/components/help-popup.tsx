@@ -11,7 +11,7 @@ import {
 import { Button } from "~/app/ui/button";
 import { GrHelpBook } from "react-icons/gr";
 
-export function DialogPopup() {
+export function HelpPopup() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>

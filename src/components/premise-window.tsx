@@ -1,13 +1,40 @@
 import { Input } from "@/app/ui/input";
+
 import { Card, CardContent } from "./ui/card";
 import { Label } from "./ui/label";
+import { Progress } from "~/app/ui/progress";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "~/app/ui/tooltip";
 
-export default function PremiseWindow() {
+export default function PremiseWindow({
+  completionPercentage,
+}: {
+  completionPercentage: number;
+}) {
   return (
     <Card className="w-[1080px]">
-      <CardContent>
-        <Label>Premise:</Label>
-        <Input type="text" placeholder={"Premise"} />
+      <CardContent className="flex items-center p-5">
+        {completionPercentage < 100 ? (
+          <TooltipProvider delayDuration={0}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Progress value={completionPercentage} className="w-[100%]" />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{`${completionPercentage}% Complete. Fill in the text above to continue`}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        ) : (
+          <div className="w-[1080px]">
+            <Label>Premise:</Label>
+            <Input type="text" placeholder={"Premise"} />
+          </div>
+        )}
       </CardContent>
     </Card>
   );

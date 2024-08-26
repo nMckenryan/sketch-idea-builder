@@ -1,4 +1,4 @@
-import { DialogPopup } from "~/components/dialog-popup";
+import { HelpPopup } from "~/components/help-popup";
 import PremiseWindow from "~/components/premise-window";
 import TopicTable from "~/components/topic-table";
 import { getConceptsOptions } from "~/lib/utils";
@@ -6,6 +6,7 @@ import { getConceptsOptions } from "~/lib/utils";
 export default function HomePage() {
   const conceptLimitList: string[] = [];
   const conceptOptions = getConceptsOptions();
+  const completion = 20;
 
   for (let i = 0; i < conceptOptions.conceptLimit; i++) {
     conceptLimitList.push("concept-" + i);
@@ -15,7 +16,7 @@ export default function HomePage() {
     <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
       <header>
         <div className="absolute right-4 top-4">
-          <DialogPopup />
+          <HelpPopup />
         </div>
       </header>
       <div className="grid grid-cols-3 gap-4">
@@ -33,7 +34,7 @@ export default function HomePage() {
           : null}
       </div>
       <div className="mt-5 grid grid-cols-1">
-        <PremiseWindow />
+        <PremiseWindow completionPercentage={completion} />
       </div>
     </main>
   );

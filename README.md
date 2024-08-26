@@ -18,12 +18,10 @@ This was built with the T3 Stack project bootstrapped with create-t3-app with:
 - [x] Basic Setup and Deployment check to Vercel
 - [x] Establish Debug
 - [x] Set up basic UI
-- [] Set up Options Menu
-- [] Set up tutorial docs
+- [x] Set up tutorial popup basic
 - [] Set up Timer
-- [] Set up nav menu
-- [] Set up About Page Explaining functions
-- [] Set up option settings
+- [x] Set up nav menu
+- [x] Set up About Page Explaining functions
 - [] Check basic UI mobile compatibility
 
 BUG FIXES/CLEANUP
