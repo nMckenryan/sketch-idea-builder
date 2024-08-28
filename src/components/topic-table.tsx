@@ -17,10 +17,12 @@ interface TableProps {
   listName: string;
   description: string;
   conceptLimit: string[];
+  onDataReceived: (data: number) => void;
 }
 
 export default function TopicTable(props: TableProps) {
   const [selected, setSelected] = useState<string[]>([]);
+  const [completionPercentage, setCompletionPercentage] = useState(0);
 
   const maxSelected = 3;
 
@@ -34,6 +36,12 @@ export default function TopicTable(props: TableProps) {
         return prev;
       }
     });
+
+    setCompletionPercentage(
+      Math.round((selected.length / props.conceptLimit.length) * 100),
+    );
+
+    props.onDataReceived(completionPercentage);
   };
 
   return (
@@ -43,7 +51,7 @@ export default function TopicTable(props: TableProps) {
         <CardDescription>{props.description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <form className="grid gap-2">
+        <form className="flex flex-col gap-2">
           {props.conceptLimit.map((item) => (
             <div className="flex items-center" key={item}>
               <Checkbox

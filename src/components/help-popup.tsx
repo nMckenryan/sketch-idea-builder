@@ -23,14 +23,21 @@ export function HelpPopup() {
         <AlertDialogHeader>
           <AlertDialogTitle>How to use Sketch Idea Builder</AlertDialogTitle>
           <AlertDialogDescription>
-            This app is designed to help you bring premises to life. Simply:
-            <ul style={{ listStyleType: "disc" }}>
+            <p>
+              This app is designed to help you generate ideas for your comedy
+              sketches.
+            </p>
+            <ul className="m-1 w-full list-inside list-disc p-1">
               <li>
                 Fill in as much of the prompts as possible with funny concepts.
               </li>
               <li> Select your three favourites in each category</li>
               <li> Combine them in the Premise section below</li>
             </ul>
+            <p>
+              After that, get to writing ASAP! It doesn't have to be perfect,
+              you can (and should) come back later to polish it.
+            </p>
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

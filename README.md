@@ -22,7 +22,7 @@ This was built with the T3 Stack project bootstrapped with create-t3-app with:
 - [] Set up Timer
 - [x] Set up nav menu
 - [x] Set up About Page Explaining functions
-- [] Check basic UI mobile compatibility
+- [x] Check basic UI mobile compatibility
 
 BUG FIXES/CLEANUP
 

@@ -16,7 +16,7 @@ export default function PremiseWindow({
   completionPercentage: number;
 }) {
   return (
-    <Card className="w-[1080px]">
+    <Card className="flex w-[350px] flex-col md:w-[1080px]">
       <CardContent className="flex items-center p-5">
         {completionPercentage < 100 ? (
           <TooltipProvider delayDuration={0}>
@@ -30,7 +30,7 @@ export default function PremiseWindow({
             </Tooltip>
           </TooltipProvider>
         ) : (
-          <div className="w-[1080px]">
+          <div className="w-[100%]">
             <Label>Premise:</Label>
             <Input type="text" placeholder={"Premise"} />
           </div>
