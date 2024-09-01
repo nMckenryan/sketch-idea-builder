@@ -37,9 +37,7 @@ export default function TopicTable(props: TableProps) {
       }
     });
 
-    setCompletionPercentage(
-      Math.round((selected.length / props.conceptLimit.length) * 100),
-    );
+    setCompletionPercentage(Math.round((selected.length / 3) * 100));
 
     props.onDataReceived(completionPercentage);
   };

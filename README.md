@@ -19,10 +19,13 @@ This was built with the T3 Stack project bootstrapped with create-t3-app with:
 - [x] Establish Debug
 - [x] Set up basic UI
 - [x] Set up tutorial popup basic
-- [] Set up Timer
 - [x] Set up nav menu
 - [x] Set up About Page Explaining functions
 - [x] Check basic UI mobile compatibility
+- [] Set up Timer
+- [] Set up progress unlock for premise writing
+- [] Include app icon
+- [] Cleanup and publish to vercel
 
 BUG FIXES/CLEANUP
 
