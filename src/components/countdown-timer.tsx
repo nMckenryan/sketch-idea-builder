@@ -10,10 +10,12 @@ const CountdownTimer = () => {
 
   useEffect(() => {
     let interval: number | undefined;
+    //ticker
     if (isActive && timeLeft > 0) {
       interval = window.setInterval(() => {
         setTimeLeft((timeLeft) => timeLeft - 1);
       }, 1000);
+      //End of timer
     } else if (timeLeft === 0) {
       setIsActive(false);
     }
@@ -38,12 +40,14 @@ const CountdownTimer = () => {
 
   return (
     <div className="flex flex-row items-center justify-center gap-1">
+      {/* Timer Display */}
       <div className="text-4xl font-bold">{formatTime(timeLeft)}</div>
+
+      {/* Timer Controls */}
       <div className="flex flex-row">
         <button
-          className={`rounded px-4 py-2 ${isActive ? "bg-red-500" : "bg-green-500"} text-white`}
+          className={`rounded px-4 py-2 ${isActive ? "bg-red-500" : "bg-green-500"} text-white ${timeLeft === 0 && "hidden"}`}
           onClick={toggleTimer}
-          disabled={timeLeft === 0}
         >
           {isActive ? <FaPause /> : <FaPlay />}
         </button>

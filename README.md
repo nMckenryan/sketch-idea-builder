@@ -22,7 +22,7 @@ This was built with the T3 Stack project bootstrapped with create-t3-app with:
 - [x] Set up nav menu
 - [x] Set up About Page Explaining functions
 - [x] Check basic UI mobile compatibility
-- [] Set up Timer
+- [x] Set up Timer
 - [] Set up progress unlock for premise writing
 - [] Include app icon
 - [] Cleanup and publish to vercel
