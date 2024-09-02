@@ -35,8 +35,8 @@ export function HelpPopup() {
               <li> Combine them in the Premise section below</li>
             </ul>
             <p>
-              After that, get to writing ASAP! It doesn't have to be perfect,
-              you can (and should) come back later to polish it.
+              After that, get to writing ASAP! It doesn&apos;t have to be
+              perfect, you can (and should) come back later to polish it.
             </p>
           </AlertDialogDescription>
         </AlertDialogHeader>

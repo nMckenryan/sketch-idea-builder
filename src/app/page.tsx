@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import CountdownTimer from "~/components/countdown-timer";
 import { HelpPopup } from "~/components/help-popup";
 import PremiseWindow from "~/components/premise-window";
